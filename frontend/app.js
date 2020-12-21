@@ -44,4 +44,10 @@ async function adicionarProdutosAODOM() {
     }
 }
 
+async function atualizarQuantidadeProdutos() {
+    const produtos = await buscarProdutos()
+    document.querySelector('.count_products').innerHTML = `${produtos.length} produtos`
+}
+
+atualizarQuantidadeProdutos()
 adicionarProdutosAODOM()

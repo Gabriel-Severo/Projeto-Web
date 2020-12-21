@@ -63,3 +63,18 @@ main .products .product .product-image img {
 main .products .product .product-name p {
     font-weight: bold;
 }
+
+@media (max-width: 800px) {
+    main .products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 5px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    main .products {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
