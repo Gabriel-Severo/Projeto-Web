@@ -33,7 +33,7 @@ main a {
 main .product-store{
     width: 100%;
     height: 100vh;
-    background-color: white;
+    background-color: #E5E5E5;
     display: none;
     padding: 20px;
     z-index: 1;
@@ -42,6 +42,10 @@ main .product-store{
     overflow-x: hidden;
     overflow-y: scroll !important;
     z-index: 1;
+}
+
+main .product-store .product-store-info {
+    margin-left: 20px;
 }
 
 main .product-store .product-store-prices {
@@ -54,14 +58,20 @@ main .product-store .product-store-price {
 
 main .product-store .product-store-sizes {
     margin: 10px 0;
-    height: 35px;
+    height: 25px;
 }
 
 main .product-store .size {
-    padding: 7px;
-    border: 1px solid;
+    padding: 5px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
     text-decoration: none;
+    font-weight: bold;
     color: black;
+}
+
+main .product-store .actived {
+    background-color: black;
+    color: #fff;
 }
 
 main .text-info, .product-store-installments {

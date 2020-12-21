@@ -50,7 +50,6 @@ async function atualizarQuantidadeProdutos(produtos) {
 }
 
 async function adicionarEventoDeClickAosProdutos(produtos) {
-    console.log(produtos)
     const links = await document.querySelectorAll('.link-product')
     let i = 0
     for (link of links) {
@@ -76,14 +75,21 @@ async function adicionarEventoDeClickAosProdutos(produtos) {
                     <p class="text-info">Escolha o tamanho</p>
                     <div class="product-store-sizes">
                     </div>
-                    <button class="submit">Adicionar a sacola</button>
+                    <button class="submit">Adicionar à sacola</button>
                 </div>
             `
-            for(size of sizes) {
+            if(!sizes.length){
                 document.querySelector('.product-store-sizes').innerHTML += `
-                    <a class="size" href="#">${size.size}</a>
+                    <p>Não há nenhum tamanho disponível</p>
                 `
+            }else{
+                for(size of sizes) {
+                    document.querySelector('.product-store-sizes').innerHTML += `
+                        <a class="size" href="#">${size.size}</a>
+                    `
+                }
             }
+            adicionarEventoDeEscolhaDeTamanho()
         })
         i++
     }
@@ -95,6 +101,17 @@ function adicionarEventoDeClickALogo() {
         document.querySelector('.product-store').style.display = 'none'
         document.querySelector('body').style.overflow = 'auto'
     })
+}
+
+function adicionarEventoDeEscolhaDeTamanho() {
+    const sizes = document.querySelectorAll('.size')
+    for(size of sizes) {
+        size.addEventListener('click', (event) => {
+            const ativo = document.querySelector('.actived')
+            if(ativo) ativo.classList.toggle('actived')
+            event.target.classList.toggle('actived')
+        })
+    }
 }
 
 async function main() {
