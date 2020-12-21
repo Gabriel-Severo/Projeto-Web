@@ -36,10 +36,6 @@
       "type": "integer",
       "required": true
     },
-    "installments": {
-      "type": "integer",
-      "required": true
-    },
     "style": {
       "model": "style"
     },
@@ -53,6 +49,10 @@
         "images"
       ],
       "plugin": "upload",
+      "required": true
+    },
+    "installments": {
+      "type": "string",
       "required": true
     }
   }
